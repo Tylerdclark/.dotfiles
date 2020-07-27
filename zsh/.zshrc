@@ -4,13 +4,10 @@
 
 alias setup-zsh="git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh ~/.config/.oh-my-zsh"
 
-# Path to oh-my-zsh installation.
-export ZSH="/Users/tylerclark/.config/.oh-my-zsh"
 # For tmux
 export EDITOR='vim'
 
 ZSH_THEME="agkozak"
-
 
 # Command auto-correction.
 ENABLE_CORRECTION="true"
@@ -18,13 +15,10 @@ ENABLE_CORRECTION="true"
 # To display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# For wildcard tabs
-# setopt NO_CASE_GLOB
 
 # this is for autocompletions
 
-autoload -U compinit && compinit 
-#source path/to/zsh-autocomplete.plugin.zsh
+autoload -U compinit && compinit
 
 plugins=(
     git
@@ -36,11 +30,13 @@ plugins=(
     zsh-completions
     )
 
-
 ######################
 # User configuration #
 ######################
 
+# Path to oh-my-zsh installation.
+
+export ZSH="/Users/tylerclark/.config/.oh-my-zsh"
 
 export PATH="/Users/tylerclark/opt/anaconda3/bin:$PATH"
 
@@ -52,6 +48,7 @@ chpwd() {
 }
 
 alias textedit='open -a TextEdit'
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 ####################################
 #  Print system info upon opening  #
@@ -64,4 +61,4 @@ neofetch
 ######################
 
 source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.zsh
+#source ~/.iterm2_shell_integration.zsh 
