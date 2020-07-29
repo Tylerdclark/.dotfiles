@@ -6,63 +6,78 @@ colorscheme synthwave
 
 call plug#begin('~/.vim/plugged')
 
-  " nerdtree
-  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-  Plug 'jistr/vim-nerdtree-tabs'
+" nerdtree
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'jistr/vim-nerdtree-tabs'
 
-  " git
-  Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
+" git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-  "for Wakatime - the time-keeper™
-  Plug 'wakatime/vim-wakatime'
+"for Wakatime - the time-keeper™
+Plug 'wakatime/vim-wakatime'
 
-  " We will see how this works
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'mbbill/undotree'
+" We will see how this works
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mbbill/undotree'
   
 
 call plug#end()
 
-  set history=1000                " Store lots of :cmdline history
-  set noswapfile                  " Don't use swapfile
-  set nobackup                    " Don't create annoying backup files
-  set cursorline                  " Highlight the current line
-  set clipboard+=unnamed          " Shared clipboard
-  set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
-  set linespace=0                 " How to change the space between lines in vim?
-  set updatetime=100
-  set switchbuf=usetab,usetab     " Open new buffers always in new tabs
-  set wildignore+=*/.git/*,       " Linux/MacOSX
-      \*/.hg/*,*/.svn/*,
-      \*/cscope*,*/*.csv/,
-      \*/*.log,*tags*,*/bin/*        
-  set nowrap
-  set showcmd                     " Show me what I'm typing
-  set showmode                    " Show current mode down the bottom
-  set number                      " Show line numbers
-  set numberwidth=4               " Number width
-  set showmatch                   " Do not show matching brackets by flickering
-  set completeopt-=preview        " Don't show preview window
-  set incsearch                   " Shows the match while typing
-  set hlsearch                    " Highlight found searches
-  set ignorecase                  " Search case insensitive...
-  set smartcase                   " ... but not when search pattern contains upper case characters
-  set shiftwidth=4                " Default indent settings
-  set softtabstop=4               " 
-  set expandtab                   " Use spaces instead of tabs
-  set autoindent                  " Automatic indent
-  set smartindent                 " Smart indent
-  set noerrorbells                " Getting annoying
-  set colorcolumn=80
-  highlight ColorColumn ctermbg=0 guibg=lightgrey
+set history=1000                " Store lots of :cmdline history
+set noswapfile                  " Don't use swapfile
+set nobackup                    " Don't create annoying backup files
+set cursorline                  " Highlight the current line
+set clipboard+=unnamed          " Shared clipboard
+set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
+set linespace=0                 " How to change the space between lines in vim?
+set updatetime=100
+set switchbuf=usetab,usetab     " Open new buffers always in new tabs
+set wildignore+=*/.git/*,       " Linux/MacOSX
+    \*/.hg/*,*/.svn/*,
+    \*/cscope*,*/*.csv/,
+    \*/*.log,*tags*,*/bin/*
+set mouse=a                     "Don't yell at me 
+set nowrap
+set showcmd                     " Show me what I'm typing
+set showmode                    " Show current mode down the bottom
+set number                      " Show line numbers
+set numberwidth=4               " Number width
+set showmatch                   " Do not show matching brackets by flickering
+set completeopt-=preview        " Don't show preview window
+set incsearch                   " Shows the match while typing
+set hlsearch                    " Highlight found searches
+set ignorecase                  " Search case insensitive...
+set smartcase                   " ... but not when search pattern contains upper case characters
+set shiftwidth=4                " Default indent settings
+set softtabstop=4               " 
+set expandtab                   " Use spaces instead of tabs
+set autoindent                  " Automatic indent
+set smartindent                 " Smart indent
+set noerrorbells                " Getting annoying also not working...
+
+" Put all temporary files in the same directory
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap//
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+set viminfo     ='100,n$HOME/.vim/files/info/viminfo
+
+
+"neat column highlight
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let mapleader = " "
 
 " Some NERDTree configs  
-  autocmd vimenter * NERDTree	" Open a nerd tree when vim start up
-  autocmd VimEnter * wincmd p " Go to previous (last accessed) window.
-  map <C-n> :NERDTreeFocusToggle<CR>  " Open NERDTree with ctrl + n
+autocmd vimenter * NERDTree	" Open a nerd tree when vim start up
+autocmd VimEnter * wincmd p     " Go to previous (last accessed) window.
+map <C-n> :NERDTreeFocusToggle<CR>  " Open NERDTree with ctrl + n
 
 
 " Some more configs
@@ -71,3 +86,42 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
+
+let g:coc_global_extensions = [
+            \ 'coc-emoji', 'coc-eslint', 'coc-prettier',
+            \ 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin',
+            \ 'coc-css', 'coc-json', 'coc-pyls', 'coc-yaml']
+  
+
+set cmdheight=2                 " Better display for messages
+set updatetime=300              " Smaller updatetime for CursorHold & CursorHold
+set shortmess+=c                " don't give |ins-completion-menu| messages.
+set signcolumn=yes              " always show signcolumns
+
+
+" Use `lp` and `ln` for navigate diagnostics
+nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+nmap <silent> <leader>li <Plug>(coc-implementation)
+nmap <silent> <leader>lf <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>lr <Plug>(coc-rename)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
