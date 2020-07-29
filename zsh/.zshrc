@@ -42,6 +42,10 @@ export PATH="/Users/tylerclark/opt/anaconda3/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+AGKOZAK_COLORS_USER_HOST=127
+AGKOZAK_COLORS_PATH=blue
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
 # to ls everytime I cd
 chpwd() {
   ls
@@ -55,7 +59,7 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 ####################################
 
 neofetch
-
+bindkey -v
 ######################
 # source needed here #
 ######################
