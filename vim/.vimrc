@@ -21,6 +21,14 @@ Plug 'wakatime/vim-wakatime'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mbbill/undotree'
   
+"will try out ale
+Plug 'dense-analysis/ale'
+Plug 'prettier/vim-prettier'
+Plug 'evanleck/vim-svelte'
+Plug 'pangloss/vim-javascript'
+Plug 'moll/vim-node'
+Plug 'mxw/vim-jsx'
+Plug 'alvan/vim-closetag'
 
 call plug#end()
 
@@ -55,6 +63,7 @@ set expandtab                   " Use spaces instead of tabs
 set autoindent                  " Automatic indent
 set smartindent                 " Smart indent
 set noerrorbells                " Getting annoying also not working...
+set noeb vb t_vb=               "this actually stops the bells
 
 " Put all temporary files in the same directory
 set backup
@@ -78,7 +87,11 @@ let mapleader = " "
 autocmd vimenter * NERDTree	" Open a nerd tree when vim start up
 autocmd VimEnter * wincmd p     " Go to previous (last accessed) window.
 map <C-n> :NERDTreeFocusToggle<CR>  " Open NERDTree with ctrl + n
-
+"some nav
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " Some more configs
 nnoremap <leader>h :wincmd h<CR>
@@ -86,6 +99,8 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 let g:coc_global_extensions = [
             \ 'coc-emoji', 'coc-eslint', 'coc-prettier',
@@ -98,6 +113,15 @@ set updatetime=300              " Smaller updatetime for CursorHold & CursorHold
 set shortmess+=c                " don't give |ins-completion-menu| messages.
 set signcolumn=yes              " always show signcolumns
 
+" ALE svelte config
+let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
+let g:ale_linters = {'svelte': ['stylelint', 'eslint']}
+let g:ale_fixers = {'svelte': ['prettier', 'prettier_standard']}
+
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
 
 " Use `lp` and `ln` for navigate diagnostics
 nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)
