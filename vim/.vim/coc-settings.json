@@ -1,0 +1,22 @@
+{
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.removeDuplicateItems": true,
+  "codeLens.enable": true,
+  "coc.preferences.jumpCommand": "drop",
+  "coc.preferences.rootPatterns": [".git", ".vscode"],
+  "coc.preferences.formatOnSaveFiletypes": ["python", "javascript", "javascriptreact", "typescriptreact", "css"],
+  "coc-actions.hideCursor": false,
+  "coc-actions.useCursorLine": true,
+  "diagnostic.checkCurrentLine": false,
+  "python.jediEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "tsserver.npm": "/usr/local/bin/npm",
+  "javascript.referencesCodeLens.enable": false,
+  "javascript.implementationsCodeLens.enable": false,
+  "typescript.referencesCodeLens.enable": false,
+  "typescript.implementationsCodeLens.enable": false
+}
