@@ -50,6 +50,10 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 chpwd() {
   ls
 }
+# 1337 terminal calculator
+calc(){ 
+    awk "BEGIN{ print $* }" ;
+}
 
 alias textedit='open -a TextEdit'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
