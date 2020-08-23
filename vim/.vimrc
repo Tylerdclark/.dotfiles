@@ -28,6 +28,7 @@ Plug 'evanleck/vim-svelte'
 Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
+"more quality of life
 Plug 'alvan/vim-closetag'
 
 call plug#end()
@@ -106,7 +107,6 @@ let g:coc_global_extensions = [
             \ 'coc-emoji', 'coc-eslint', 'coc-prettier',
             \ 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin',
             \ 'coc-css', 'coc-json', 'coc-pyls', 'coc-yaml']
-  
 
 set cmdheight=2                 " Better display for messages
 set updatetime=300              " Smaller updatetime for CursorHold & CursorHold
@@ -116,7 +116,11 @@ set signcolumn=yes              " always show signcolumns
 " ALE svelte config
 let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {'svelte': ['stylelint', 'eslint']}
-let g:ale_fixers = {'svelte': ['prettier', 'prettier_standard']}
+let g:ale_fixers = {
+    \'svelte': ['prettier', 'prettier_standard'],
+    \'javascript': ['eslint'],
+    \'jsx': ['eslint']
+\}
 
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
@@ -179,3 +183,12 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" for vanilla vim bracket completion
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
