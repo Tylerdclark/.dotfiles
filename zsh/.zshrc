@@ -54,6 +54,13 @@ chpwd() {
 calc(){ 
     awk "BEGIN{ print $* }" ;
 }
+# for random cpp tinkering
+gppr(){
+    g++-10 "$1" #compile
+    ./a.out     #run
+    rm a.out    #remove
+}
+
 
 alias textedit='open -a TextEdit'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
