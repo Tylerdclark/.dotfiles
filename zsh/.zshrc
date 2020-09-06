@@ -45,6 +45,7 @@ export PATH="/Users/tylerclark/opt/anaconda3/bin:$PATH"
 AGKOZAK_COLORS_USER_HOST=127
 AGKOZAK_COLORS_PATH=blue
 ZSH_AUTOSUGGEST_USE_ASYNC=1
+AGKOZAK_PROMPT_CHAR=( λ %# : )
 
 # to ls everytime I cd
 chpwd() {
@@ -60,7 +61,12 @@ gppr(){
     ./a.out     #run
     rm a.out    #remove
 }
-
+# c counterpart
+gccr(){
+    gcc-10 "$1" #compilea
+    ./a.out     #run
+    rm a.out    #remove
+}
 
 alias textedit='open -a TextEdit'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
