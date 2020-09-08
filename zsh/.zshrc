@@ -9,6 +9,11 @@ export EDITOR='vim'
 
 ZSH_THEME="agkozak"
 
+# if this is a first time installation:
+# [[ ! -d $ZSH_CUSTOM/themes ]] && mkdir $ZSH_CUSTOM/themes
+# git clone https://github.com/agkozak/agkozak-zsh-prompt $ZSH_CUSTOM/themes/agkozak
+# ln -s $ZSH_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $ZSH_CUSTOM/themes/agkozak.zsh-theme
+
 # Command auto-correction.
 ENABLE_CORRECTION="true"
 
