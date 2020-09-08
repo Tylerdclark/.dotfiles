@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 syntax on
-colorscheme synthwave 
+"colorscheme synthwave 
 
 let g:ale_disable_lsp = 1 "need to add before plugins are loaded
 
@@ -82,7 +82,7 @@ set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 
 "neat column highlight
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightblue
 
 let mapleader = " "
 
