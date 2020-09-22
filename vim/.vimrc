@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 syntax on
-"colorscheme synthwave 
+colorscheme synthwave 
 
 let g:ale_disable_lsp = 1 "need to add before plugins are loaded
 
@@ -49,7 +49,7 @@ set wildignore+=*/.git/*,       " Linux/MacOSX
     \*/cscope*,*/*.csv/,
     \*/*.log,*tags*,*/bin/*
 set mouse=a                     "Don't yell at me 
-set nowrap
+set wrap linebreak
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode down the bottom
 set number                      " Show line numbers
