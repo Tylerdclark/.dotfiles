@@ -62,15 +62,27 @@ calc(){
 }
 # for random cpp tinkering
 gppr(){
-    g++-10 "$1" #compile
-    ./a.out     #run
-    rm a.out    #remove
+    if (( $# == 0))
+    then
+        echo usage: gppr c++file1 c++file2..
+    else
+    echo input files: $*
+    g++-10 $* -o main   #compile
+    ./main              #run
+    rm main             #remove
+    fi
 }
 # c counterpart
 gccr(){
-    gcc-10 "$1" #compilea
-    ./a.out     #run
-    rm a.out    #remove
+    if (( $# == 0))
+    then
+        echo usage: gccr cfile1 cfile2..
+    else
+    echo input files: $*
+    gcc-10 $* -o main   #compile
+    ./main              #run
+    rm main             #remove
+    fi
 }
 
 alias textedit='open -a TextEdit'
