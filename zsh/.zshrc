@@ -69,6 +69,7 @@ gppr(){
     echo input files: $*
     g++-10 $* -o main   #compile
     ./main              #run
+    echo now removing executable...
     rm main             #remove
     fi
 }
@@ -81,6 +82,7 @@ gccr(){
     echo input files: $*
     gcc-10 $* -o main   #compile
     ./main              #run
+    echo now removing executable...
     rm main             #remove
     fi
 }
