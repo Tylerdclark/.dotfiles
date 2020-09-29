@@ -66,7 +66,6 @@ gppr(){
     then
         echo usage: gppr c++file1 c++file2..
     else
-    echo input files: $*
     g++-10 $* -o main   #compile
     ./main              #run
     echo now removing executable...
@@ -79,7 +78,6 @@ gccr(){
     then
         echo usage: gccr cfile1 cfile2..
     else
-    echo input files: $*
     gcc-10 $* -o main   #compile
     ./main              #run
     echo now removing executable...
