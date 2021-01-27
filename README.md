@@ -15,7 +15,7 @@ these pics may or may not represent my setup, depending on how much changes i ha
 
 ### zsh
 
-![zsh screenshot](pics/ty-shell.png)
+![zsh screenshot](pics/ty-shell2.png)
 
 ### vim
 
