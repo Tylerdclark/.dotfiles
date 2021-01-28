@@ -49,6 +49,8 @@ export PATH=${PATH}:/Users/tylerclark/Library/Python/3.9/bin
 
 export PATH=$PATH:/Users/tylerclark/.local/bin
 
+export PATH="/usr/local/sbin:$PATH"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 AGKOZAK_COLORS_USER_HOST=127
