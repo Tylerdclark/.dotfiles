@@ -92,7 +92,7 @@ gccr(){
 }
 
 alias textedit='open -a TextEdit'
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 ####################################
 #  Print system info upon opening  #
