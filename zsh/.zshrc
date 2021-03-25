@@ -51,6 +51,8 @@ export PATH=$PATH:/Users/tylerclark/.local/bin
 
 export PATH="/usr/local/sbin:$PATH"
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 AGKOZAK_COLORS_USER_HOST=127
