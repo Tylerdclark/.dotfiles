@@ -7,6 +7,9 @@ my current efforts are:
 * improving vim usability (am vim noob)
 * increasing portability
 
+TODO: script to create vim/ folders if they are not present.
+REMINDER: on macs, there will need to be xcode command-line tools installed first for plugged installation , ( maybe yarn as well ? )
+
 that being said.. feel free to try these out if you want. i want my dotfiles to be plug and play eventually, but i am still working on shell scripting. should work on *nix (minus the iterm2)
 
 ## some screens
